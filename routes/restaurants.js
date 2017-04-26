@@ -43,9 +43,22 @@ exports.register = (server, options, next) => {
     })
 
     server.route({
-        path: '/churchs/{id}',
+        path: '/restaurants/{id}',
         method: 'DELETE',
         handler: Restaurants.delete,
+        config: {
+            validate: {
+                params: {
+                    id: Joi.string().min(12).required()
+                }
+            }
+        }
+    })
+
+    server.route({
+        path: '/restaurants/{id}/foods',
+        method: 'GET',
+        handler: Restaurants.getFood,
         config: {
             validate: {
                 params: {

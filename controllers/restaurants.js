@@ -70,4 +70,15 @@ module.exports = {
             }
         })
     },
+    getFood: (request, reply) => {
+        const db = request.server.app.db
+
+        db.foods.find({"restaurant._id": request.params.id}, (err, records) => {
+            if (err) {
+                reply(err)
+            } else {
+                reply(records)
+            }
+        })
+    }
 }
