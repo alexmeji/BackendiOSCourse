@@ -36,7 +36,7 @@ module.exports = {
         db.foods.save({
             name: request.payload.name,
             description: request.payload.description,
-            price: request.payload.slug,
+            price: request.payload.price,
             image: request.payload.image,
             restaurant: {
                 _id: request.payload.restaurant._id,
