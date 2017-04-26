@@ -1,8 +1,8 @@
-# A Hapi starter project
+## Proyecto Final TEC
 
-This isa Hapi starter project with small structure for
-a beginners.You can start your projects with this easy 
-example and make magic.
+En este proyecto se encuentran los servicios a
+consumir para el proyecto final del curso
+de iOS en el TEC.
 
 ## Folder structure
 - controllers

@@ -1,18 +1,23 @@
 'use strict'
 
 const Hapi = require('hapi');
+const Mongojs = require('mongojs')
 
 //Create a server with a host and port
 const server = new Hapi.Server();
 
 server.connection({
-    host: 'localhost',
-    port: '3000'
+    host: '0.0.0.0',
+    port: '9000'
 })
+
+server.app.db = Mongojs('tecios', ['restaurants', 'foods'])
 
 server.register([
     //Add the routes
-    require('./routes/status')
+    require('./routes/status'),
+    require('./routes/restaurants'),
+    require('./routes/foods')
 ], (err) => {
     if(err) {
         throw err;
